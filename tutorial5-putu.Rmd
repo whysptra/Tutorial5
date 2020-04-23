@@ -1,0 +1,24 @@
+---
+title: "Learning to rebase"
+author: "Putu Wahyu Saputra"
+date: "4/23/2020"
+output: bookdown::html_document2
+keep_md : true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Libraries}
+library(tidyverse)
+library(COVID19)
+```
+
+```{r read data}
+# Examining situation in USA
+covid_us <- covid19("USA", level = 2)
+ggplot(covid_us, aes(x = date , y = confirmed)) +
+geom_line() +
+facet_wrap(~id)
+```
